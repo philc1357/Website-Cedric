@@ -134,9 +134,11 @@
         }
 
         .promo-item img {
-            width: 100px;
-            height: 100px;
+            width: auto;
+            height: 150px;
             margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 16px 2px rgba(0,0,0,0.5);
         }
 
         .promo-item h3 {
@@ -246,6 +248,15 @@
                 display: none;
             }
 
+            #top_produkte {
+                font-size: 30px;
+                background-image: url("underline.png");
+                background-repeat: no-repeat;
+                width: max-content;
+                margin: auto;
+                background-size: cover;
+            }
+
             .categories_mobile {
                 display: none;
             }
@@ -253,8 +264,8 @@
             .categories_desktop {
                 display: flex;
                 justify-content: center;
-                gap: 15px;
-                margin-bottom: 20px;
+                gap: 20px;
+                margin-bottom: 30px;
             }
 
             .categories_desktop a {
@@ -266,6 +277,7 @@
                 border-radius: 100px;
                 cursor: pointer;
                 transition: transform 0.3s ease, background-color 0.3s ease;
+                box-shadow: 3px 3px 10px 3px rgba(0,0,0,0.3);
             }
 
             .categories_desktop a:hover {
@@ -304,7 +316,6 @@
 
             .hero-overlay_mobile h1 {
                 font-size: 2.5em;
-                margin: 0;
             }
 
             .hero-overlay_mobile p {
@@ -336,19 +347,40 @@
                 background: linear-gradient(0deg, rgba(76,175,80,1) 0%, rgba(110,216,114,1) 100%);
                 color: white;
                 text-decoration: none;
-                border-radius: 5px;
+                border-radius: 100px;
                 cursor: pointer;
                 transition: transform 0.3s ease, background-color 0.3s ease;
+                box-shadow: 3px 3px 10px 3px rgba(0,0,0,0.3);
             }
 
             .categories_mobile a:hover {
                 background-color: #45a049;
                 transform: scale(1.03);
+                /* box-shadow: 3px 3px 10px 5px rgba(0,0,0,0.3); */
+            }
+
+            #top_produkte {
+                font-size: 25px;
+                background-image: url("underline.png");
+                background-repeat: no-repeat;
+                width: max-content;
+                margin: auto;
+                background-size: cover;
+            }
+
+            table {
+                font-size: 12px;
             }
 
             tr {
                 background-color: #ffffff;
                 box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+            }
+
+            .btn_kaufen_mobile {
+                font-size: 12px;
+                padding: 10px;
+                border-radius: 30px;
             }
         }
 
@@ -648,17 +680,17 @@
         <h2>Warum unsere Produkte?</h2>
         <div class="promo-items">
             <div class="promo-item">
-                <img src="https://via.placeholder.com/100?text=Qualität" alt="Unabhängiger Vergleich">
+                <img src="produktvergleich1.jpg" alt="Unabhängiger Vergleich">
                 <h3>Unabhängiger Vergleich</h3>
                 <p>Wir analysieren und vergleichen verschiedene Produkte, um Ihnen die besten Optionen basierend auf Bewertungen und Preis-Leistung zu präsentieren.</p>
             </div>
             <div class="promo-item">
-                <img src="https://via.placeholder.com/100?text=Service" alt="Smarte Kaufentscheidungen">
+                <img src="kaufentscheidung1.jpg" alt="Smarte Kaufentscheidungen">
                 <h3>Smarte Kaufentscheidungen</h3>
                 <p>Mit unserem Vergleich sparen Sie Zeit und Geld, indem Sie direkt die am besten bewerteten und preislich attraktiven Produkte entdecken.</p>
             </div>
             <div class="promo-item">
-                <img src="https://via.placeholder.com/100?text=Lieferung" alt="Beste Angebote auf einen Blick">
+                <img src="angebote.jpg" alt="Beste Angebote auf einen Blick">
                 <h3>Beste Angebote auf einen Blick</h3>
                 <p>Finden Sie schnell und einfach die besten Gesundheitsprodukte – unabhängig und objektiv verglichen.</p>
             </div>
@@ -703,7 +735,7 @@
     
         <!-- Kategorie: Alle Produkte -->
         <div id="all" class="category-section" style="display: block;">
-            <h2>Top Gesundheitsprodukte</h2>
+            <h2 id="top_produkte">Top Gesundheitsprodukte</h2>
             <table>
                 <tr>
                     <th class="table_header">Produkt</th>
