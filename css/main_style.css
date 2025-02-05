@@ -334,6 +334,7 @@ h1, h2 {
     }
 
     .categories_mobile a {
+        font-size: 12px;
         padding: 10px 15px;
         background: rgb(76,175,80);
         background: linear-gradient(0deg, rgba(76,175,80,1) 0%, rgba(110,216,114,1) 100%);
@@ -353,7 +354,7 @@ h1, h2 {
 
     #top_produkte {
         font-size: 25px;
-        background-image: url("underline.png");
+        background-image: url("../media/underline.png");
         background-repeat: no-repeat;
         width: max-content;
         margin: auto;
