@@ -1,4 +1,5 @@
 Was noch gemacht werden MUSS:
+    1. Jede unnötige id und class entfernen!!!
 
 
 Was noch gemacht werden sollte:
@@ -7,4 +8,4 @@ Was noch gemacht werden sollte:
         Sinnvoll wäre eine Funktion die die Tabelle anzeigt, sodass das neue Produkt nur über js eingetragen werden muss.
 
 
-Was noch gemaacht werden kann:
+Was noch gemacht werden kann:

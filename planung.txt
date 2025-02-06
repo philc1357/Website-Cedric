@@ -1,0 +1,12 @@
+Tagesänderungen 06.02.2025 Philipp
+
+1.	Tabellen Design angepasst.
+	Tabelle ist jetzt final mit allen Kategorien auf Handy und Desktop designt.
+	
+2.	PLANUNG.MD angelegt. Hier kann man die weitere Planung rein schreiben.
+
+3.	Alle nicht genutzen ids und class entfernt.
+
+4.	Header Design auf Handy angepasst.
+
+5.	gelbe underline in jeder kategorie sichtbar.

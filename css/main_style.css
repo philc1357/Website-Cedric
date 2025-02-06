@@ -12,6 +12,7 @@
 header {
     position: relative;
     background: linear-gradient(0deg, #00c975, #92FE9D);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .hero-slider {
@@ -94,11 +95,27 @@ header {
 
 /* Promo Section – Überzeugende Textbausteine & Bilder */
 .promo {
-    background: #e9f5e9;
+    --sz: 10px;
+    --c1: rgb(255, 255, 255);
+    --c2: rgb(253, 253, 253);
+    --c3: rgb(251, 251, 251);
+    --c4: rgb(249, 249, 249);
+    --ts: 50%/ calc(var(--sz) * 10.5) calc(var(--sz) * 12.2);
+    margin: 0;
+    padding: 0;
+    /* height: 170vh; */
+    overflow: hidden;
+    background: 
+        conic-gradient(from 180deg at 100% 83.335%, var(--c3) 0 60deg, #fff0 0 360deg) var(--ts),
+        conic-gradient(from 120deg at 66.66% 66.66%, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
+        conic-gradient(from 60deg at 66.66% 33.33%, var(--c2) 0 60deg, var(--c4) 0 120deg, #fff0 0 360deg) var(--ts),
+        conic-gradient(from -60deg at 33% 16.665%, var(--c1) 0 120deg, var(--c3) 0 240deg, var(--c4) 0 360deg) var(--ts),
+        var(--c2);
+    background-attachment: fixed;
     padding: 40px 20px;
     text-align: center;
+    color: black; /* Falls nötig für besseren Kontrast */    
 }
-
 .promo h2 {
     margin-bottom: 20px;
 }
@@ -146,6 +163,7 @@ header {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     transition: opacity 0.5s ease;
+    box-shadow: 7px 5px 16px 2px rgba(0,0,0,0.5);
 }
 
 h1, h2 {
@@ -238,6 +256,29 @@ h1, h2 {
 
     .display_mobile {
         display: none;
+    }
+
+    .promo {
+        --sz: 10px;
+        --c1: rgb(255, 255, 255);
+        --c2: rgb(253, 253, 253);
+        --c3: rgb(251, 251, 251);
+        --c4: rgb(249, 249, 249);
+        --ts: 50%/ calc(var(--sz) * 10.5) calc(var(--sz) * 12.2);
+        margin: 0;
+        padding: 0;
+        height: 110vh;
+        overflow: hidden;
+        background: 
+            conic-gradient(from 180deg at 100% 83.335%, var(--c3) 0 60deg, #fff0 0 360deg) var(--ts),
+            conic-gradient(from 120deg at 66.66% 66.66%, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
+            conic-gradient(from 60deg at 66.66% 33.33%, var(--c2) 0 60deg, var(--c4) 0 120deg, #fff0 0 360deg) var(--ts),
+            conic-gradient(from -60deg at 33% 16.665%, var(--c1) 0 120deg, var(--c3) 0 240deg, var(--c4) 0 360deg) var(--ts),
+            var(--c2);
+        background-attachment: fixed;
+        padding: 40px 20px;
+        text-align: center;
+        color: black; /* Falls nötig für besseren Kontrast */    
     }
 
     #txt_top_produkte, #txt_blutdruck, #txt_herz, #txt_ausdauer, #txt_immunsystem, #txt_stress {
@@ -334,7 +375,7 @@ h1, h2 {
     }
 
     .categories_mobile a {
-        font-size: 12px;
+        font-size: 13px;
         padding: 10px 15px;
         background: rgb(76,175,80);
         background: linear-gradient(0deg, rgba(76,175,80,1) 0%, rgba(110,216,114,1) 100%);
@@ -362,7 +403,7 @@ h1, h2 {
     }
 
     table {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     tr {
@@ -371,7 +412,7 @@ h1, h2 {
     }
 
     .btn_kaufen_mobile {
-        font-size: 12px;
+        font-size: 13px;
         padding: 10px;
         border-radius: 30px;
     }
@@ -415,6 +456,7 @@ footer {
     padding: 20px 0;
     font-size: 14px;
     margin-top: 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 footer .footer-links a {
     color: #fff;
