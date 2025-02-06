@@ -240,7 +240,7 @@ h1, h2 {
         display: none;
     }
 
-    #top_produkte {
+    #txt_top_produkte, #txt_blutdruck, #txt_herz, #txt_ausdauer, #txt_immunsystem, #txt_stress {
         font-size: 30px;
         background-image: url("../media/underline.png");
         background-repeat: no-repeat;
@@ -352,7 +352,7 @@ h1, h2 {
         /* box-shadow: 3px 3px 10px 5px rgba(0,0,0,0.3); */
     }
 
-    #top_produkte {
+    #txt_top_produkte, #txt_blutdruck, #txt_herz, #txt_ausdauer, #txt_immunsystem, #txt_stress {
         font-size: 25px;
         background-image: url("../media/underline.png");
         background-repeat: no-repeat;
