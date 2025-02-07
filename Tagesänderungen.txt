@@ -1,4 +1,4 @@
-Tagesänderungen 06.02.2025 Philipp
+Tagesï¿½nderungen 06.02.2025 Philipp
 
 1.	Tabellen Design angepasst.
 	Tabelle ist jetzt final mit allen Kategorien auf Handy und Desktop designt.
@@ -10,3 +10,8 @@ Tagesänderungen 06.02.2025 Philipp
 4.	Header Design auf Handy angepasst.
 
 5.	gelbe underline in jeder kategorie sichtbar.
+
+--------------------------------------------------------------------------------------------
+TagesÃ¤nderungen 07.02.2025 Philipp
+
+1.	
