@@ -154,6 +154,55 @@
                     $conn->close();
                 ?>
             </table>
+
+            <!-- Tabelle für Desktop -->
+            <table class='display_mobile'>
+                <tr>
+                    <th>Produkt</th>
+                    <th>Bewertung</th>
+                    <th>Preis</th>
+                    <th>Link</th>
+                </tr>
+                
+                <?php
+                
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "1234";
+                    $database = "mysql";
+                
+                    // Creating a connection
+                    $conn = new mysqli($servername, $username, $password, $database);
+                
+                    // SQL-Abfrage vorbereiten
+                    $sql = "SELECT * FROM produkte";
+                    $result = $conn->query($sql);                
+                            
+                    // Daten ausgeben, falls vorhanden
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            // Sterne-Bewertung generieren
+                            $bewertung = (int) $row['bewertung']; // Sicherstellen, dass es eine ganze Zahl ist
+                            $sterne = str_repeat("★", $bewertung) . str_repeat("☆", 5 - $bewertung);
+                            
+                            echo "<tr>
+                                    <td>{$row['produktname']}</td>
+                                    <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
+                                    <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                    <td>
+                                        <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                    </td>                                
+                                </tr>";
+                        }
+                    } 
+                    else {
+                        echo "<tr><td colspan='4'>Keine Produkte gefunden</td></tr>";
+                    }
+
+                    // Verbindung schließen
+                    $conn->close();
+                ?>
+            </table>
         </div>
 
         <!-- Footer mit rechtlich wichtigen Links -->
