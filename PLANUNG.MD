@@ -1,5 +1,5 @@
 Was noch gemacht werden MUSS:
-    1. Produkte einzeln zu ihren kategorien anzeigen
+    1. Preis
 
 
 Was noch gemacht werden sollte:

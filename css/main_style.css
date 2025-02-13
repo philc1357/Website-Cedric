@@ -246,6 +246,15 @@ h1, h2 {
     background-size: cover;
 }
 
+#txt_entdecken {
+    font-size: 20px;
+    background-repeat: no-repeat;
+    width: max-content;
+    margin: auto;
+    background-size: cover;
+    font-weight: bold;
+}
+
 
 /* Design für große Bildschirme */
 @media( min-width: 769px ) {
@@ -419,6 +428,10 @@ table {
     /* border-collapse: collapse; */
     margin-top: 20px;
     border-spacing: 0 10px; /* Erster Wert für Spalten, zweiter für Zeilen */
+}
+
+.th_mobile {
+    font-size: 15px;
 }
 
 th, td {
