@@ -10,39 +10,51 @@
 
 header {
     position: relative;
-    background: linear-gradient(0deg, #00c975, #92FE9D);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
-
-.hero-slider {
     position: relative;
     width: 100%;
     height: 400px;
     overflow: hidden;
+    position: relative;
+    max-width: 100%;
+    height: 400px;
+    overflow: hidden;
 }
-
-.hero-slider .slide {
+  
+.slide {
     position: absolute;
     width: 100%;
-    height: 400px;
-    display: none;
-    animation: fade 1s ease;
+    height: 100%;
+    z-index: -1;
 }
-
-.hero-slider .slide img {
+  
+img {
     width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
 }
 
-/* Keyframe für Fade-Animation */
-@keyframes fade {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
+/* Buttons */
+#btn_entdecken {
+    background-color: #c7bda2;
+    border-radius: 100px;
+    box-shadow: rgba(187, 120, 44, 0.2) 0 -25px 18px -14px inset,rgba(187, 120, 44, .15) 0 1px 2px,rgba(187, 120, 44, .15) 0 2px 4px,rgba(187, 120, 44, .15) 0 4px 8px,rgba(187, 120, 44, .15) 0 8px 16px,rgba(187, 120, 44, .15) 0 16px 32px;
+    color: rgb(128, 66, 0);
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
-/* Buttons */
-.btn_kaufen_desktop, #btn_entdecken {
+.btn_kaufen_desktop{
     background-color: #c2fbd7;
     border-radius: 100px;
     box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
@@ -61,10 +73,14 @@ header {
     touch-action: manipulation;
 }
 
-.btn_kaufen_desktop:hover, .btn_entdecken:hover {
+.btn_kaufen_desktop:hover {
     box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
     transform: scale(1.05) rotate(-1deg);
+}
 
+#btn_entdecken:hover {
+    box-shadow: rgba(187, 120, 44, 0.35) 0 -25px 18px -14px inset,rgba(187, 120, 44, .35) 0 1px 2px,rgba(187, 120, 44, .35) 0 2px 4px,rgba(187, 120, 44, .35) 0 4px 8px,rgba(187, 120, 44, .35) 0 8px 16px,rgba(187, 120, 44, .35) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
 }
 
 /* Buttons für mittlere und kleine Bildschirme */
@@ -221,6 +237,15 @@ h1, h2 {
     background: #f0f0f0;
 }
 
+#txt_top_produkte, #txt_blutdruck, #txt_herz, #txt_ausdauer, #txt_immunsystem, #txt_stress, #txt_alle_produkte {
+    font-size: 25px;
+    background-image: url("../media/underline.png");
+    background-repeat: no-repeat;
+    width: max-content;
+    margin: auto;
+    background-size: cover;
+}
+
 
 /* Design für große Bildschirme */
 @media( min-width: 769px ) {
@@ -259,36 +284,13 @@ h1, h2 {
         display: none;
     }
 
-    .promo {
-        --sz: 10px;
-        --c1: rgb(255, 255, 255);
-        --c2: rgb(253, 253, 253);
-        --c3: rgb(251, 251, 251);
-        --c4: rgb(249, 249, 249);
-        --ts: 50%/ calc(var(--sz) * 10.5) calc(var(--sz) * 12.2);
-        margin: 0;
-        padding: 0;
-        height: 110vh;
-        overflow: hidden;
-        background: 
-            conic-gradient(from 180deg at 100% 83.335%, var(--c3) 0 60deg, #fff0 0 360deg) var(--ts),
-            conic-gradient(from 120deg at 66.66% 66.66%, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
-            conic-gradient(from 60deg at 66.66% 33.33%, var(--c2) 0 60deg, var(--c4) 0 120deg, #fff0 0 360deg) var(--ts),
-            conic-gradient(from -60deg at 33% 16.665%, var(--c1) 0 120deg, var(--c3) 0 240deg, var(--c4) 0 360deg) var(--ts),
-            var(--c2);
-        background-attachment: fixed;
-        padding: 40px 20px;
-        text-align: center;
-        color: black; /* Falls nötig für besseren Kontrast */    
-    }
-
-    #txt_alle_produkte, #txt_blutdruck, #txt_herz, #txt_ausdauer, #txt_immunsystem, #txt_stress {
+    #txt_entdecken {
         font-size: 30px;
-        background-image: url("../media/underline.png");
         background-repeat: no-repeat;
         width: max-content;
         margin: auto;
         background-size: cover;
+        font-weight: bold;
     }
 
     .categories_mobile {
@@ -393,15 +395,6 @@ h1, h2 {
         background-color: #45a049;
         transform: scale(1.03);
         /* box-shadow: 3px 3px 10px 5px rgba(0,0,0,0.3); */
-    }
-
-    #txt_top_produkte, #txt_blutdruck, #txt_herz, #txt_ausdauer, #txt_immunsystem, #txt_stress {
-        font-size: 25px;
-        background-image: url("../media/underline.png");
-        background-repeat: no-repeat;
-        width: max-content;
-        margin: auto;
-        background-size: cover;
     }
 
     table {

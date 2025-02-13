@@ -16,7 +16,7 @@
                 <div class="hero-overlay_desktop">
                     <h1>Verbessern Sie Ihre Gesundheit noch heute!</h1>
                     <p>Entdecken Sie unsere Premium-Gesundheitsprodukte – Qualität, die überzeugt!</p>
-                    <a href="#angebote" class="btn_entdecken">Jetzt entdecken</a>
+                    <a href="#angebote" id="btn_entdecken">Jetzt entdecken</a>
                 </div>
 
                 <div class="hero-overlay_mobile">
@@ -31,9 +31,12 @@
                     </div>
                     <a href="#angebote" id="btn_entdecken">Jetzt entdecken</a>
                 </div>
+
+                <div class="slide fade">
+                    <img src="media/immunsystem.jpg" alt="Bild 3">
+                </div>
             </div>
         </header>
-
     
         <!-- Promo Section mit überzeugenden Inhalten -->
         <section class="promo">
@@ -64,6 +67,9 @@
     
         <!-- Hauptinhalt: Suche, Kategorien und Produktvergleich -->
         <div class="container" id="angebote">
+            <center id="txt_entdecken">Entdecken Sie unsere Produkte</center>
+            <br>
+
             <!-- Suchleiste inklusive dynamischem Vorschlagsfeld -->
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Suche nach Kategorien oder Produkten..." onkeyup="handleKeyUp()">

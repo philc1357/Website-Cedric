@@ -1,24 +1,5 @@
-/* Slider für den Hero-Bereich */
-var slideIndex = 0;
-function showSlides() {
-
-    var slides = document.getElementsByClassName("slide");
-
-    for (var i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-
-    slideIndex++;
-    if (slideIndex > slides.length) { 
-        slideIndex = 1; 
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 4000); // Wechsle alle 4 Sekunden
-}
-
 /* Array der Vorschläge als Objekte */
-var suggestions = [
+let suggestions = [
     { text: "alle produkte", type: "Kategorie" },
     { text: "blutdruck", type: "Kategorie" },
     { text: "herz", type: "Kategorie" },
@@ -199,7 +180,3 @@ document.addEventListener('click', function(event) {
         suggestionsContainer.innerHTML = "";
     }
 });
-
-window.onload = function() {
-    showSlides();
-};
