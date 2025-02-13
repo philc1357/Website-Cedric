@@ -6,7 +6,6 @@
     /* Moderner Farbverlauf für einen gesunden, frischen Look */
     color: #333;
     background: linear-gradient(0deg, #57985E, #007946);
-
 }
 
 header {
@@ -42,8 +41,8 @@ header {
     to { opacity: 1; }
 }
 
-/* Buttons für große Bildschirme */
-.btn_kaufen_desktop, .btn_entdecken {
+/* Buttons */
+.btn_kaufen_desktop, #btn_entdecken {
     background-color: #c2fbd7;
     border-radius: 100px;
     box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
@@ -116,6 +115,7 @@ header {
     text-align: center;
     color: black; /* Falls nötig für besseren Kontrast */    
 }
+
 .promo h2 {
     margin-bottom: 20px;
 }
@@ -221,6 +221,7 @@ h1, h2 {
     background: #f0f0f0;
 }
 
+
 /* Design für große Bildschirme */
 @media( min-width: 769px ) {
 
@@ -281,7 +282,7 @@ h1, h2 {
         color: black; /* Falls nötig für besseren Kontrast */    
     }
 
-    #txt_top_produkte, #txt_blutdruck, #txt_herz, #txt_ausdauer, #txt_immunsystem, #txt_stress {
+    #txt_alle_produkte, #txt_blutdruck, #txt_herz, #txt_ausdauer, #txt_immunsystem, #txt_stress {
         font-size: 30px;
         background-image: url("../media/underline.png");
         background-repeat: no-repeat;
@@ -297,7 +298,7 @@ h1, h2 {
     .categories_desktop {
         display: flex;
         justify-content: center;
-        gap: 20px;
+        gap: 30px;
         margin-bottom: 30px;
     }
 
@@ -363,6 +364,7 @@ h1, h2 {
     .display_desktop {
         display: none;
     }
+
     .categories_desktop {
         display: none;
     }
@@ -438,6 +440,7 @@ th {
     background: rgb(76,175,80);
     background: linear-gradient(0deg, rgba(76,175,80,1) 0%, rgba(110,216,114,1) 100%);
     color: white;
+    font-size: 20px;
 }
 
 tr:hover {
@@ -458,12 +461,14 @@ footer {
     margin-top: 40px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
+
 footer .footer-links a {
     color: #fff;
     text-decoration: none;
     margin: 0 10px;
     transition: color 0.3s ease;
 }
+
 footer .footer-links a:hover {
     color: #ddd;
 }
@@ -477,6 +482,7 @@ a.product-link {
     width: max-content;
     margin: auto;
 }
+
 a.product-link:hover {
     background-color: #f0f0f0;
     color: #4CAF50;

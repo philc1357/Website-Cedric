@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gesundheitsprodukte Vergleich</title>
+
+        <link rel="stylesheet" href="css/main_style.css">
+    </head>
+
+    <body>        
+        <!-- Header mit Hero Slider und Überlagerungstext -->
+        <header>
+            <div class="hero-slider">
+                <div class="hero-overlay_desktop">
+                    <h1>Verbessern Sie Ihre Gesundheit noch heute!</h1>
+                    <p>Entdecken Sie unsere Premium-Gesundheitsprodukte – Qualität, die überzeugt!</p>
+                    <a href="#angebote" class="btn_entdecken">Jetzt entdecken</a>
+                </div>
+
+                <div class="hero-overlay_mobile">
+                    <div>
+                        <h1>Verbessern Sie Ihre</h1>
+                        <h1>Gesundheit noch heute!</h1>
+                    </div>
+
+                    <div id="hero_overlay_description">
+                        <p>Entdecken Sie unsere Premium-Gesundheitsprodukte.</p>
+                        <p>Qualität, die überzeugt!</p>
+                    </div>
+                    <a href="#angebote" id="btn_entdecken">Jetzt entdecken</a>
+                </div>
+            </div>
+        </header>
+
+    
+        <!-- Promo Section mit überzeugenden Inhalten -->
+        <section class="promo">
+            <h2>Warum unsere Produkte?</h2>
+
+            <div class="promo-items">
+                <div class="promo-item">
+                    <img src="media/produktvergleich1.jpg" alt="Unabhängiger Vergleich">
+                    <h3>Unabhängiger Vergleich</h3>
+                    <p>Wir analysieren und vergleichen verschiedene Produkte, um Ihnen die besten Optionen basierend auf Bewertungen und Preis-Leistung zu präsentieren.</p>
+                </div>
+
+                <div class="promo-item">
+                    <img src="media/kaufentscheidung1.jpg" alt="Smarte Kaufentscheidungen">
+                    <h3>Smarte Kaufentscheidungen</h3>
+                    <p>Mit unserem Vergleich sparen Sie Zeit und Geld, indem Sie direkt die am besten bewerteten und preislich attraktiven Produkte entdecken.</p>
+                </div>
+
+                <div class="promo-item">
+                    <img src="media/angebote.jpg" alt="Beste Angebote auf einen Blick">
+                    <h3>Beste Angebote auf einen Blick</h3>
+                    <p>Finden Sie schnell und einfach die besten Gesundheitsprodukte – unabhängig und objektiv verglichen.</p>
+                </div>
+            </div>
+        </section>
+
+
+    
+        <!-- Hauptinhalt: Suche, Kategorien und Produktvergleich -->
+        <div class="container" id="angebote">
+            <!-- Suchleiste inklusive dynamischem Vorschlagsfeld -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Suche nach Kategorien oder Produkten..." onkeyup="handleKeyUp()">
+                <div id="suggestionsContainer" class="suggestions-container"></div>
+            </div>
+        
+            <!-- Navigationsleiste der Kategorien für große Bildschirme (Desktop)-->
+            <div class="categories_desktop">
+                <a onclick="showCategory('all')">Alle</a>
+                <a onclick="showCategory('blutdruck')">Blutdruck</a>
+                <a onclick="showCategory('herz')">Herz</a>
+                <a onclick="showCategory('ausdauer')">Ausdauer</a>
+                <a onclick="showCategory('immunsystem')">Immunsystem</a>
+                <a onclick="showCategory('stress')">Stress</a>
+            </div>
+
+            <!-- Navigationsleiste der Kategorien für mittlere und kleine Bildschirme (Tablets, Handys)-->
+            <div class="categories_mobile">
+                <a onclick="showCategory('all')">Alle</a>
+                <a onclick="showCategory('blutdruck')">Blutdruck</a>
+                <a onclick="showCategory('herz')">Herz</a>
+            </div>
+
+            <div class="categories_mobile">
+                <a onclick="showCategory('ausdauer')">Ausdauer</a>
+                <a onclick="showCategory('immunsystem')">Immunsystem</a>
+                <a onclick="showCategory('stress')">Stress</a>
+            </div>
+
+            <hr class="display_mobile">
+
+            <!-- Bereich für Suchergebnisse -->
+            <div id="searchResults" class="category-section" style="display: none;"></div>
+
+            <h2 id="txt_alle_produkte">Alle Gesundheitsprodukte</h2>
+
+            <!-- Tabelle für Desktop -->
+            <table class='display_desktop'>
+                <tr>
+                    <th>Produkt</th>
+                    <th>Bewertung</th>
+                    <th>Preis</th>
+                    <th>Link</th>
+                </tr>
+                
+                <?php
+                
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "1234";
+                    $database = "mysql";
+                
+                    // Creating a connection
+                    $conn = new mysqli($servername, $username, $password, $database);
+                
+                    // SQL-Abfrage vorbereiten
+                    $sql = "SELECT * FROM produkte";
+                    $result = $conn->query($sql);                
+                            
+                    // Daten ausgeben, falls vorhanden
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            // Sterne-Bewertung generieren
+                            $bewertung = (int) $row['bewertung']; // Sicherstellen, dass es eine ganze Zahl ist
+                            $sterne = str_repeat("★", $bewertung) . str_repeat("☆", 5 - $bewertung);
+                            
+                            echo "<tr>
+                                    <td>{$row['produktname']}</td>
+                                    <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
+                                    <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                    <td>
+                                        <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                    </td>                                
+                                </tr>";
+                        }
+                    } 
+                    else {
+                        echo "<tr><td colspan='4'>Keine Produkte gefunden</td></tr>";
+                    }
+
+                    // Verbindung schließen
+                    $conn->close();
+                ?>
+            </table>
+        </div>
+
+        <!-- Footer mit rechtlich wichtigen Links -->
+        <footer>
+                <div class="footer-links">
+                    <a href="/html/impressum.html" target="_blank">Impressum</a> |
+                    <a href="/html/datenschutz.html" target="_blank">Datenschutz</a> |
+                    <a href="/html/haftungsausschluss.html" target="_blank">Haftungsausschluss</a>
+                </div>
+
+                <div class="footer-text">
+                    <p>&copy; 2025 Gesundheitsprodukte Vergleich. Alle Rechte vorbehalten.</p>
+                </div>
+        </footer>
+
+        
+        <script src="javascript/main_script.js"></script>
+    </body>
+</html>

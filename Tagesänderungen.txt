@@ -14,4 +14,14 @@ Tages�nderungen 06.02.2025 Philipp
 --------------------------------------------------------------------------------------------
 Tagesänderungen 07.02.2025 Philipp
 
-1.	
+1.	Datenbank für Produkte erstellt.
+	produktname
+	bewertung
+	preis
+	kategorie
+	link
+
+2.	Tabelle mit Produkten wird nun über php eingebunden
+	Vorteile: neues Produkt muss NUR in die Datenbank. Nichts weiter. Kein html code oder ähnliches.
+
+3. Bewertung hat jetzt immer 5 Sterne, die ausgemalt sind oder leer.
