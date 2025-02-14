@@ -79,12 +79,12 @@
        
             <!-- Navigationsleiste der Kategorien für große Bildschirme (Desktop)-->
             <div class="categories_desktop">
-                <a>Alle</a>
-                <a>Blutdruck</a>
-                <a>Herz</a>
-                <a>Ausdauer</a>
-                <a>Immunsystem</a>
-                <a>Stress</a>
+                <a onclick="show_categories_all()">Alle</a>
+                <a onclick="show_categories_blutdruck()">Blutdruck</a>
+                <a onclick="show_categories_herz()">Herz</a>
+                <a onclick="show_categories_ausdauer()">Ausdauer</a>
+                <a onclick="show_categories_immunsystem()">Immunsystem</a>
+                <a onclick="show_categories_stress()">Stress</a>
             </div>
  
             <!-- Navigationsleiste der Kategorien für mittlere und kleine Bildschirme (Tablets, Handys)-->
@@ -108,7 +108,7 @@
             <h2 id="txt_alle_produkte">Alle Gesundheitsprodukte</h2>
  
             <!-- Tabelle für Desktop -->
-             <div id='display_kategorie_alle_desktop'>
+            <div id='display_kategorie_alle_desktop' class="display_desktop">
                 <table>
                     <tr>
                         <th></th>
@@ -148,13 +148,11 @@
                                 $sterne .= str_repeat("☆", $leere_sterne);
                             
                                 echo "<tr>
-                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='{$row['bild']}'></a></td>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='media/produktfotos/{$row['bild']}'></a></td>
                                         <td><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
                                         <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
-                                        <td>
-                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
-                                        </td>                                
+                                        <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
                                     </tr>";
                             }                            
                         }
@@ -168,7 +166,7 @@
                 </table>
             </div>
 
-            <div id='display_kategorie_bluttdruck_desktop'>
+            <div id='display_kategorie_bluttdruck_desktop' class="display_desktop">
                 <table>
                     <tr>
                         <th></th>
@@ -208,13 +206,11 @@
                                 $sterne .= str_repeat("☆", $leere_sterne);
                             
                                 echo "<tr>
-                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='{$row['bild']}'></a></td>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='media/produktfotos/{$row['bild']}'></a></td>
                                         <td><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
                                         <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
-                                        <td>
-                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
-                                        </td>                                
+                                        <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
                                     </tr>";
                             }                            
                         }
@@ -228,7 +224,7 @@
                 </table>
             </div>
 
-            <div id='display_kategorie_herz_desktop'>
+            <div id='display_kategorie_herz_desktop' class="display_desktop">
                 <table>
                     <tr>
                         <th></th>
@@ -268,13 +264,11 @@
                                 $sterne .= str_repeat("☆", $leere_sterne);
                             
                                 echo "<tr>
-                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='{$row['bild']}'></a></td>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='media/produktfotos/{$row['bild']}'></a></td>
                                         <td><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
                                         <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
-                                        <td>
-                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
-                                        </td>                                
+                                        <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
                                     </tr>";
                             }                            
                         }
@@ -288,7 +282,7 @@
                 </table>
             </div>
 
-            <div id='display_kategorie_ausdauer_desktop'>
+            <div id='display_kategorie_ausdauer_desktop' class="display_desktop">
                 <table>
                     <tr>
                         <th></th>
@@ -328,13 +322,11 @@
                                 $sterne .= str_repeat("☆", $leere_sterne);
                             
                                 echo "<tr>
-                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='{$row['bild']}'></a></td>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='media/produktfotos/{$row['bild']}'></a></td>
                                         <td><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
                                         <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
-                                        <td>
-                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
-                                        </td>                                
+                                        <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
                                     </tr>";
                             }                            
                         }
@@ -348,7 +340,7 @@
                 </table>
             </div>
 
-            <div id='display_kategorie_immunsystem_desktop'>
+            <div id='display_kategorie_immunsystem_desktop' class="display_desktop">
                 <table>
                     <tr>
                         <th></th>
@@ -388,13 +380,11 @@
                                 $sterne .= str_repeat("☆", $leere_sterne);
                             
                                 echo "<tr>
-                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='{$row['bild']}'></a></td>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='media/produktfotos/{$row['bild']}'></a></td>
                                         <td><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
                                         <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
-                                        <td>
-                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
-                                        </td>                                
+                                        <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
                                     </tr>";
                             }                            
                         }
@@ -408,7 +398,7 @@
                 </table>
             </div>
 
-            <div id='display_kategorie_stress_desktop'>
+            <div id='display_kategorie_stress_desktop' class="display_desktop">
                 <table>
                     <tr>
                         <th></th>
@@ -448,13 +438,11 @@
                                 $sterne .= str_repeat("☆", $leere_sterne);
                             
                                 echo "<tr>
-                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='{$row['bild']}'></a></td>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='media/produktfotos/{$row['bild']}'></a></td>
                                         <td><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
                                         <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
-                                        <td>
-                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
-                                        </td>                                
+                                        <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
                                     </tr>";
                             }                            
                         }
@@ -471,7 +459,7 @@
 
             <!-- Tabelle für Mobile -->
             <div>
-                <table id='display_kategorie_alle_mobile'>
+                <table id='display_kategorie_alle_mobile' class="display_mobile">
                     <tr>
                         <th>Produkt</th>
                         <th>Preis</th>
@@ -518,7 +506,7 @@
             </div>
 
             <div>
-                <table id='display_kategorie_bluttdruck_mobile'>
+                <table id='display_kategorie_bluttdruck_mobile' class="display_mobile">
                     <tr>
                         <th>Produkt</th>
                         <th>Preis</th>
@@ -565,7 +553,7 @@
             </div>
 
             <div>
-                <table id='display_kategorie_stress_mobile'>
+                <table id='display_kategorie_stress_mobile' class="display_mobile">
                     <tr>
                         <th>Produkt</th>
                         <th>Preis</th>
@@ -612,7 +600,7 @@
             </div>
 
             <div>
-                <table id='display_kategorie_ausdauer_mobile'>
+                <table id='display_kategorie_ausdauer_mobile' class="display_mobile">
                     <tr>
                         <th>Produkt</th>
                         <th>Preis</th>
@@ -659,7 +647,7 @@
             </div>
 
             <div>
-                <table id='display_kategorie_herz_mobile'>
+                <table id='display_kategorie_herz_mobile' class="display_mobile">
                     <tr>
                         <th>Produkt</th>
                         <th>Preis</th>
@@ -706,7 +694,7 @@
             </div>
 
             <div>
-                <table id='display_kategorie_immunsystem_mobile'>
+                <table id='display_kategorie_immunsystem_mobile' class="display_mobile">
                     <tr>
                         <th>Produkt</th>
                         <th>Preis</th>
@@ -751,7 +739,7 @@
                     ?>
                 </table>
             </div>
- 
+        </div>
         <!-- Footer mit rechtlich wichtigen Links -->
         <footer>
                 <div class="footer-links">

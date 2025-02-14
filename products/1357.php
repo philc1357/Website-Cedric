@@ -25,17 +25,30 @@
             // Daten ausgeben, falls vorhanden
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    // Sterne-Bewertung generieren
-                    $bewertung = (int) $row['bewertung']; // Sicherstellen, dass es eine ganze Zahl ist
-                    $sterne = str_repeat("★", $bewertung) . str_repeat("☆", 5 - $bewertung);
+                    // Sterne-Bewertung als Double abrufen
+                    $bewertung = (float) $row['bewertung'];
+                    $volle_sterne = floor($bewertung);
+                    $hat_halben_stern = ($bewertung - $volle_sterne) >= 0.5;
+                    $leere_sterne = 5 - $volle_sterne - ($hat_halben_stern ? 1 : 0);
                 
-                    echo "<tr>
-                            <td><img style='width: 100px' src='../media/produktfotos/Bio-Ashwagandha - KSM-66® Premiumrohstoff 180 Kapseln.jpg'></td>
-                            <td><b>{$row['produktname']}</b></td>
-                            <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
-                            <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
-                            <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
-                        </tr>";
+                    // HTML-Sterne generieren
+                    $sterne = str_repeat("★", $volle_sterne);
+                    if ($hat_halben_stern) {
+                        $sterne .= "⯪"; // Unicode für halben Stern
+                    }
+                    $sterne .= str_repeat("☆", $leere_sterne);
+                
+                    // Bildpfad korrigieren (falls in der Datenbank kein vollständiger Pfad steht)
+                    $bildpfad = !empty($row['bild']) ? "../media/produktfotos/" . $row['bild'] : "../media/produktfotos/platzhalter.jpg";
+                
+                    echo 
+                    "<tr>
+                        <td><img style='width: 100px' src='../media/produktfotos/{$row['bild']}'></td>
+                        <td><b>{$row['produktname']}</b></td>
+                        <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
+                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                        <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
+                    </tr>";
                 }
             }
             else {
