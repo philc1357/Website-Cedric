@@ -390,7 +390,7 @@ tr:hover {
 
 /* Tabelle Kategorie Styles für Desktop */
 #display_kategorie_stress_desktop,
-#display_kategorie_bluttdruck_desktop,
+#display_kategorie_blutdruck_desktop,
 #display_kategorie_herz_desktop,
 #display_kategorie_ausdauer_desktop,
 #display_kategorie_immunsystem_desktop {
@@ -404,6 +404,11 @@ tr:hover {
 #display_kategorie_ausdauer_mobile,
 #display_kategorie_immunsystem_mobile {
     display: none;
+}
+
+.table_link_desktop:hover {
+    background-color: #c2fbd7;
+    cursor: pointer;
 }
 
 /* Footer */
