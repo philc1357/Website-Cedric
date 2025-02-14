@@ -138,8 +138,8 @@
                                 $sterne = str_repeat("★", $bewertung) . str_repeat("☆", 5 - $bewertung);
                             
                                 echo "<tr>
-                                        <td><a href='/products/{$row['produktname']}'><img style='width: 100px' src='{$row['bild']}'></a></td>
-                                        <td><a style='color: black; text-decoration: none' href='/products/{$row['produktname']}'><b>{$row['produktname']}</b></a></td>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='width: 100px' src='{$row['bild']}'></a></td>
+                                        <td><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
                                         <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
                                         <td>
@@ -190,7 +190,7 @@
                                 
                                 // Produktname und Sterne in einer Zelle kombinieren (mit <br> für einen Zeilenumbruch)
                                 echo "<tr>
-                                        <td>{$row['produktname']}<br><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
+                                        <td><b><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'>{$row['produktname']}<a/></b><br><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
                                         <td>
                                             <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
