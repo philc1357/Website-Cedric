@@ -108,16 +108,16 @@
             <h2 id="txt_alle_produkte">Alle Gesundheitsprodukte</h2>
  
             <!-- Tabelle für Desktop -->
-            <table class='display_desktop'>
-                <tr>
-                    <th></th>
-                    <th>Produkt</th>
-                    <th>Bewertung</th>
-                    <th>Preis</th>
-                    <th>Link</th>
-                </tr>
-               
-                <div class="display_kategorie_alle_desktop">
+             <div id='display_kategorie_alle_desktop'>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Produkt</th>
+                        <th>Bewertung</th>
+                        <th>Preis</th>
+                        <th>Link</th>
+                    </tr>
+                
                     <?php               
                         $servername = "localhost";
                         $username = "root";
@@ -161,36 +161,336 @@
                         else {
                             echo "<tr><td colspan='4'>Keine Produkte gefunden</td></tr>";
                         }
-    
+
                         // Verbindung schließen
                         $conn->close();
-                    ?>
-                </div>
-            </table>
+                    ?>                
+                </table>
+            </div>
+
+            <div id='display_kategorie_bluttdruck_desktop'>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Produkt</th>
+                        <th>Bewertung</th>
+                        <th>Preis</th>
+                        <th>Link</th>
+                    </tr>
+                
+                    <?php               
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "1234";
+                        $database = "mysql";
+                
+                        // Creating a connection
+                        $conn = new mysqli($servername, $username, $password, $database);
+                
+                        // SQL-Abfrage vorbereiten
+                        $sql = "SELECT * FROM produkte WHERE kategorie = 'blutdruck'";
+                        $result = $conn->query($sql);                
+                            
+                        // Daten ausgeben, falls vorhanden
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                // Sterne-Bewertung als Double abrufen
+                                $bewertung = (double) $row['bewertung']; // Stelle sicher, dass es eine Gleitkommazahl ist
+                                $volle_sterne = floor($bewertung); // Ganze Sterne
+                                $hat_halben_stern = ($bewertung - $volle_sterne) >= 0.5; // Prüfen, ob es einen halben Stern gibt
+                                $leere_sterne = 5 - $volle_sterne - ($hat_halben_stern ? 1 : 0); // Restliche leere Sterne berechnen
+                            
+                                // HTML-Sterne generieren
+                                $sterne = str_repeat("★", $volle_sterne);
+                                if ($hat_halben_stern) {
+                                    $sterne .= "⯪"; // Unicode für halben Stern
+                                }
+                                $sterne .= str_repeat("☆", $leere_sterne);
+                            
+                                echo "<tr>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='{$row['bild']}'></a></td>
+                                        <td><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
+                                        <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
+                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                        <td>
+                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                        </td>                                
+                                    </tr>";
+                            }                            
+                        }
+                        else {
+                            echo "<tr><td colspan='4'>Keine Produkte gefunden</td></tr>";
+                        }
+
+                        // Verbindung schließen
+                        $conn->close();
+                    ?>                
+                </table>
+            </div>
+
+            <div id='display_kategorie_herz_desktop'>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Produkt</th>
+                        <th>Bewertung</th>
+                        <th>Preis</th>
+                        <th>Link</th>
+                    </tr>
+                
+                    <?php               
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "1234";
+                        $database = "mysql";
+                
+                        // Creating a connection
+                        $conn = new mysqli($servername, $username, $password, $database);
+                
+                        // SQL-Abfrage vorbereiten
+                        $sql = "SELECT * FROM produkte WHERE kategorie = 'herz'";
+                        $result = $conn->query($sql);                
+                            
+                        // Daten ausgeben, falls vorhanden
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                // Sterne-Bewertung als Double abrufen
+                                $bewertung = (double) $row['bewertung']; // Stelle sicher, dass es eine Gleitkommazahl ist
+                                $volle_sterne = floor($bewertung); // Ganze Sterne
+                                $hat_halben_stern = ($bewertung - $volle_sterne) >= 0.5; // Prüfen, ob es einen halben Stern gibt
+                                $leere_sterne = 5 - $volle_sterne - ($hat_halben_stern ? 1 : 0); // Restliche leere Sterne berechnen
+                            
+                                // HTML-Sterne generieren
+                                $sterne = str_repeat("★", $volle_sterne);
+                                if ($hat_halben_stern) {
+                                    $sterne .= "⯪"; // Unicode für halben Stern
+                                }
+                                $sterne .= str_repeat("☆", $leere_sterne);
+                            
+                                echo "<tr>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='{$row['bild']}'></a></td>
+                                        <td><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
+                                        <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
+                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                        <td>
+                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                        </td>                                
+                                    </tr>";
+                            }                            
+                        }
+                        else {
+                            echo "<tr><td colspan='4'>Keine Produkte gefunden</td></tr>";
+                        }
+
+                        // Verbindung schließen
+                        $conn->close();
+                    ?>                
+                </table>
+            </div>
+
+            <div id='display_kategorie_ausdauer_desktop'>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Produkt</th>
+                        <th>Bewertung</th>
+                        <th>Preis</th>
+                        <th>Link</th>
+                    </tr>
+                
+                    <?php               
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "1234";
+                        $database = "mysql";
+                
+                        // Creating a connection
+                        $conn = new mysqli($servername, $username, $password, $database);
+                
+                        // SQL-Abfrage vorbereiten
+                        $sql = "SELECT * FROM produkte WHERE kategorie = 'ausdauer'";
+                        $result = $conn->query($sql);                
+                            
+                        // Daten ausgeben, falls vorhanden
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                // Sterne-Bewertung als Double abrufen
+                                $bewertung = (double) $row['bewertung']; // Stelle sicher, dass es eine Gleitkommazahl ist
+                                $volle_sterne = floor($bewertung); // Ganze Sterne
+                                $hat_halben_stern = ($bewertung - $volle_sterne) >= 0.5; // Prüfen, ob es einen halben Stern gibt
+                                $leere_sterne = 5 - $volle_sterne - ($hat_halben_stern ? 1 : 0); // Restliche leere Sterne berechnen
+                            
+                                // HTML-Sterne generieren
+                                $sterne = str_repeat("★", $volle_sterne);
+                                if ($hat_halben_stern) {
+                                    $sterne .= "⯪"; // Unicode für halben Stern
+                                }
+                                $sterne .= str_repeat("☆", $leere_sterne);
+                            
+                                echo "<tr>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='{$row['bild']}'></a></td>
+                                        <td><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
+                                        <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
+                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                        <td>
+                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                        </td>                                
+                                    </tr>";
+                            }                            
+                        }
+                        else {
+                            echo "<tr><td colspan='4'>Keine Produkte gefunden</td></tr>";
+                        }
+
+                        // Verbindung schließen
+                        $conn->close();
+                    ?>                
+                </table>
+            </div>
+
+            <div id='display_kategorie_immunsystem_desktop'>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Produkt</th>
+                        <th>Bewertung</th>
+                        <th>Preis</th>
+                        <th>Link</th>
+                    </tr>
+                
+                    <?php               
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "1234";
+                        $database = "mysql";
+                
+                        // Creating a connection
+                        $conn = new mysqli($servername, $username, $password, $database);
+                
+                        // SQL-Abfrage vorbereiten
+                        $sql = "SELECT * FROM produkte WHERE kategorie = 'immunsystem'";
+                        $result = $conn->query($sql);                
+                            
+                        // Daten ausgeben, falls vorhanden
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                // Sterne-Bewertung als Double abrufen
+                                $bewertung = (double) $row['bewertung']; // Stelle sicher, dass es eine Gleitkommazahl ist
+                                $volle_sterne = floor($bewertung); // Ganze Sterne
+                                $hat_halben_stern = ($bewertung - $volle_sterne) >= 0.5; // Prüfen, ob es einen halben Stern gibt
+                                $leere_sterne = 5 - $volle_sterne - ($hat_halben_stern ? 1 : 0); // Restliche leere Sterne berechnen
+                            
+                                // HTML-Sterne generieren
+                                $sterne = str_repeat("★", $volle_sterne);
+                                if ($hat_halben_stern) {
+                                    $sterne .= "⯪"; // Unicode für halben Stern
+                                }
+                                $sterne .= str_repeat("☆", $leere_sterne);
+                            
+                                echo "<tr>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='{$row['bild']}'></a></td>
+                                        <td><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
+                                        <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
+                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                        <td>
+                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                        </td>                                
+                                    </tr>";
+                            }                            
+                        }
+                        else {
+                            echo "<tr><td colspan='4'>Keine Produkte gefunden</td></tr>";
+                        }
+
+                        // Verbindung schließen
+                        $conn->close();
+                    ?>                
+                </table>
+            </div>
+
+            <div id='display_kategorie_stress_desktop'>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Produkt</th>
+                        <th>Bewertung</th>
+                        <th>Preis</th>
+                        <th>Link</th>
+                    </tr>
+                
+                    <?php               
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "1234";
+                        $database = "mysql";
+                
+                        // Creating a connection
+                        $conn = new mysqli($servername, $username, $password, $database);
+                
+                        // SQL-Abfrage vorbereiten
+                        $sql = "SELECT * FROM produkte WHERE kategorie = 'stress'";
+                        $result = $conn->query($sql);                
+                            
+                        // Daten ausgeben, falls vorhanden
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                // Sterne-Bewertung als Double abrufen
+                                $bewertung = (double) $row['bewertung']; // Stelle sicher, dass es eine Gleitkommazahl ist
+                                $volle_sterne = floor($bewertung); // Ganze Sterne
+                                $hat_halben_stern = ($bewertung - $volle_sterne) >= 0.5; // Prüfen, ob es einen halben Stern gibt
+                                $leere_sterne = 5 - $volle_sterne - ($hat_halben_stern ? 1 : 0); // Restliche leere Sterne berechnen
+                            
+                                // HTML-Sterne generieren
+                                $sterne = str_repeat("★", $volle_sterne);
+                                if ($hat_halben_stern) {
+                                    $sterne .= "⯪"; // Unicode für halben Stern
+                                }
+                                $sterne .= str_repeat("☆", $leere_sterne);
+                            
+                                echo "<tr>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='{$row['bild']}'></a></td>
+                                        <td><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
+                                        <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
+                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                        <td>
+                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                        </td>                                
+                                    </tr>";
+                            }                            
+                        }
+                        else {
+                            echo "<tr><td colspan='4'>Keine Produkte gefunden</td></tr>";
+                        }
+
+                        // Verbindung schließen
+                        $conn->close();
+                    ?>                
+                </table>
+            </div>
 <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
             <!-- Tabelle für Mobile -->
-            <table class='display_mobile'>
-                <tr>
-                    <th>Produkt</th>
-                    <th>Preis</th>
-                    <th>Link</th>
-                </tr>
-               
-                <div class="display_kategorie_alle">
+            <div>
+                <table id='display_kategorie_alle_mobile'>
+                    <tr>
+                        <th>Produkt</th>
+                        <th>Preis</th>
+                        <th>Link</th>
+                    </tr>
+                
                     <?php
                         $servername = "localhost";
                         $username = "root";
                         $password = "1234";
                         $database = "mysql";
-    
+        
                         // Verbindung erstellen
                         $conn = new mysqli($servername, $username, $password, $database);
-    
+        
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte";
                         $result = $conn->query($sql);
-    
+        
                         // Daten ausgeben, falls vorhanden
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
@@ -210,13 +510,247 @@
                         } else {
                             echo "<tr><td colspan='3'>Keine Produkte gefunden</td></tr>";
                         }
-    
+        
                         // Verbindung schließen
                         $conn->close();
                     ?>
-                </div> 
-            </table>
-        </div>
+                </table>
+            </div>
+
+            <div>
+                <table id='display_kategorie_bluttdruck_mobile'>
+                    <tr>
+                        <th>Produkt</th>
+                        <th>Preis</th>
+                        <th>Link</th>
+                    </tr>
+                
+                    <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "1234";
+                        $database = "mysql";
+        
+                        // Verbindung erstellen
+                        $conn = new mysqli($servername, $username, $password, $database);
+        
+                        // SQL-Abfrage vorbereiten
+                        $sql = "SELECT * FROM produkte WHERE kategorie = 'blutdruck'";
+                        $result = $conn->query($sql);
+        
+                        // Daten ausgeben, falls vorhanden
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                // Sterne-Bewertung generieren
+                                $bewertung = (int) $row['bewertung']; // Sicherstellen, dass es eine ganze Zahl ist
+                                $sterne = str_repeat("★", $bewertung) . str_repeat("☆", 5 - $bewertung);
+                                
+                                // Produktname und Sterne in einer Zelle kombinieren (mit <br> für einen Zeilenumbruch)
+                                echo "<tr>
+                                        <td><b><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'>{$row['produktname']}<a/></b><br><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
+                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                        <td>
+                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                        </td>
+                                    </tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='3'>Keine Produkte gefunden</td></tr>";
+                        }
+        
+                        // Verbindung schließen
+                        $conn->close();
+                    ?>
+                </table>
+            </div>
+
+            <div>
+                <table id='display_kategorie_stress_mobile'>
+                    <tr>
+                        <th>Produkt</th>
+                        <th>Preis</th>
+                        <th>Link</th>
+                    </tr>
+                
+                    <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "1234";
+                        $database = "mysql";
+        
+                        // Verbindung erstellen
+                        $conn = new mysqli($servername, $username, $password, $database);
+        
+                        // SQL-Abfrage vorbereiten
+                        $sql = "SELECT * FROM produkte WHERE kategorie = 'stress'";
+                        $result = $conn->query($sql);
+        
+                        // Daten ausgeben, falls vorhanden
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                // Sterne-Bewertung generieren
+                                $bewertung = (int) $row['bewertung']; // Sicherstellen, dass es eine ganze Zahl ist
+                                $sterne = str_repeat("★", $bewertung) . str_repeat("☆", 5 - $bewertung);
+                                
+                                // Produktname und Sterne in einer Zelle kombinieren (mit <br> für einen Zeilenumbruch)
+                                echo "<tr>
+                                        <td><b><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'>{$row['produktname']}<a/></b><br><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
+                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                        <td>
+                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                        </td>
+                                    </tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='3'>Keine Produkte gefunden</td></tr>";
+                        }
+        
+                        // Verbindung schließen
+                        $conn->close();
+                    ?>
+                </table>
+            </div>
+
+            <div>
+                <table id='display_kategorie_ausdauer_mobile'>
+                    <tr>
+                        <th>Produkt</th>
+                        <th>Preis</th>
+                        <th>Link</th>
+                    </tr>
+                
+                    <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "1234";
+                        $database = "mysql";
+        
+                        // Verbindung erstellen
+                        $conn = new mysqli($servername, $username, $password, $database);
+        
+                        // SQL-Abfrage vorbereiten
+                        $sql = "SELECT * FROM produkte WHERE kategorie = 'ausdauer'";
+                        $result = $conn->query($sql);
+        
+                        // Daten ausgeben, falls vorhanden
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                // Sterne-Bewertung generieren
+                                $bewertung = (int) $row['bewertung']; // Sicherstellen, dass es eine ganze Zahl ist
+                                $sterne = str_repeat("★", $bewertung) . str_repeat("☆", 5 - $bewertung);
+                                
+                                // Produktname und Sterne in einer Zelle kombinieren (mit <br> für einen Zeilenumbruch)
+                                echo "<tr>
+                                        <td><b><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'>{$row['produktname']}<a/></b><br><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
+                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                        <td>
+                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                        </td>
+                                    </tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='3'>Keine Produkte gefunden</td></tr>";
+                        }
+        
+                        // Verbindung schließen
+                        $conn->close();
+                    ?>
+                </table>
+            </div>
+
+            <div>
+                <table id='display_kategorie_herz_mobile'>
+                    <tr>
+                        <th>Produkt</th>
+                        <th>Preis</th>
+                        <th>Link</th>
+                    </tr>
+                
+                    <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "1234";
+                        $database = "mysql";
+        
+                        // Verbindung erstellen
+                        $conn = new mysqli($servername, $username, $password, $database);
+        
+                        // SQL-Abfrage vorbereiten
+                        $sql = "SELECT * FROM produkte WHERE kategorie = 'herz'";
+                        $result = $conn->query($sql);
+        
+                        // Daten ausgeben, falls vorhanden
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                // Sterne-Bewertung generieren
+                                $bewertung = (int) $row['bewertung']; // Sicherstellen, dass es eine ganze Zahl ist
+                                $sterne = str_repeat("★", $bewertung) . str_repeat("☆", 5 - $bewertung);
+                                
+                                // Produktname und Sterne in einer Zelle kombinieren (mit <br> für einen Zeilenumbruch)
+                                echo "<tr>
+                                        <td><b><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'>{$row['produktname']}<a/></b><br><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
+                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                        <td>
+                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                        </td>
+                                    </tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='3'>Keine Produkte gefunden</td></tr>";
+                        }
+        
+                        // Verbindung schließen
+                        $conn->close();
+                    ?>
+                </table>
+            </div>
+
+            <div>
+                <table id='display_kategorie_immunsystem_mobile'>
+                    <tr>
+                        <th>Produkt</th>
+                        <th>Preis</th>
+                        <th>Link</th>
+                    </tr>
+                
+                    <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "1234";
+                        $database = "mysql";
+        
+                        // Verbindung erstellen
+                        $conn = new mysqli($servername, $username, $password, $database);
+        
+                        // SQL-Abfrage vorbereiten
+                        $sql = "SELECT * FROM produkte WHERE kategorie = 'immunsystem'";
+                        $result = $conn->query($sql);
+        
+                        // Daten ausgeben, falls vorhanden
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                // Sterne-Bewertung generieren
+                                $bewertung = (int) $row['bewertung']; // Sicherstellen, dass es eine ganze Zahl ist
+                                $sterne = str_repeat("★", $bewertung) . str_repeat("☆", 5 - $bewertung);
+                                
+                                // Produktname und Sterne in einer Zelle kombinieren (mit <br> für einen Zeilenumbruch)
+                                echo "<tr>
+                                        <td><b><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'>{$row['produktname']}<a/></b><br><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
+                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                        <td>
+                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                        </td>
+                                    </tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='3'>Keine Produkte gefunden</td></tr>";
+                        }
+        
+                        // Verbindung schließen
+                        $conn->close();
+                    ?>
+                </table>
+            </div>
  
         <!-- Footer mit rechtlich wichtigen Links -->
         <footer>

@@ -310,7 +310,7 @@ h1, h2 {
         margin: 10px;
     }
 
-    .hero-overlay_desktop, .display_desktop, .categories_desktop {
+    .hero-overlay_desktop, #display_kategorie_alle_desktop, .categories_desktop {
         display: none;
     }
 
@@ -385,6 +385,24 @@ tr:hover {
 }
 
 .category-section {
+    display: none;
+}
+
+/* Tabelle Kategorie Styles für Desktop */
+#display_kategorie_stress_desktop,
+#display_kategorie_bluttdruck_desktop,
+#display_kategorie_herz_desktop,
+#display_kategorie_ausdauer_desktop,
+#display_kategorie_immunsystem_desktop {
+    display: none;
+}
+
+/* Tabelle Kategorie Styles für Handy */
+#display_kategorie_stress_mobile,
+#display_kategorie_bluttdruck_mobile,
+#display_kategorie_herz_mobile,
+#display_kategorie_ausdauer_mobile,
+#display_kategorie_immunsystem_mobile {
     display: none;
 }
 
