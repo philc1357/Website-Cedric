@@ -26,7 +26,8 @@
                     </div>
  
                     <div id="hero_overlay_description">
-                        <p>Entdecken Sie unsere Premium-Gesundheitsprodukte.</p>
+                        <p>Entdecken Sie unsere</p>
+                        <p>Premium-Gesundheitsprodukte.</p>
                         <p>Qualität, die überzeugt!</p>
                     </div>
                     <a href="#angebote" id="btn_entdecken">Jetzt entdecken</a>
@@ -133,12 +134,21 @@
                         // Daten ausgeben, falls vorhanden
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                // Sterne-Bewertung generieren
-                                $bewertung = (int) $row['bewertung']; // Sicherstellen, dass es eine ganze Zahl ist
-                                $sterne = str_repeat("★", $bewertung) . str_repeat("☆", 5 - $bewertung);
+                                // Sterne-Bewertung als Double abrufen
+                                $bewertung = (double) $row['bewertung']; // Stelle sicher, dass es eine Gleitkommazahl ist
+                                $volle_sterne = floor($bewertung); // Ganze Sterne
+                                $hat_halben_stern = ($bewertung - $volle_sterne) >= 0.5; // Prüfen, ob es einen halben Stern gibt
+                                $leere_sterne = 5 - $volle_sterne - ($hat_halben_stern ? 1 : 0); // Restliche leere Sterne berechnen
+                            
+                                // HTML-Sterne generieren
+                                $sterne = str_repeat("★", $volle_sterne);
+                                if ($hat_halben_stern) {
+                                    $sterne .= "⯪"; // Unicode für halben Stern
+                                }
+                                $sterne .= str_repeat("☆", $leere_sterne);
                             
                                 echo "<tr>
-                                        <td><a href='products/{$row['produkt_id']}.php'><img style='width: 100px' src='{$row['bild']}'></a></td>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='{$row['bild']}'></a></td>
                                         <td><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
                                         <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
@@ -146,7 +156,7 @@
                                             <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
                                         </td>                                
                                     </tr>";
-                            }
+                            }                            
                         }
                         else {
                             echo "<tr><td colspan='4'>Keine Produkte gefunden</td></tr>";
