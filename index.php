@@ -147,8 +147,8 @@
                                 $sterne .= str_repeat("☆", $leere_sterne);
                             
                                 echo "<tr>
-                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='media/produktfotos/{$row['bild']}'></a></td>
-                                        <td><a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto'title='{$row['produktname']}' src='media/produktfotos/{$row['bild']}'></a></td>
+                                        <td><a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b title='{$row['produktname']}'>{$row['produktname']}</b></a></td>
                                         <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
                                         <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
@@ -207,8 +207,8 @@
                                 $sterne .= str_repeat("☆", $leere_sterne);
                             
                                 echo "<tr>
-                                        <td'><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='media/produktfotos/{$row['bild']}'></a></td>
-                                        <td><a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto'title='{$row['produktname']}' src='media/produktfotos/{$row['bild']}'></a></td>
+                                        <td><a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b title='{$row['produktname']}'>{$row['produktname']}</b></a></td>
                                         <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
                                         <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
@@ -267,8 +267,8 @@
                                 $sterne .= str_repeat("☆", $leere_sterne);
                             
                                 echo "<tr>
-                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='media/produktfotos/{$row['bild']}'></a></td>
-                                        <td><a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto'title='{$row['produktname']}' src='media/produktfotos/{$row['bild']}'></a></td>
+                                        <td><a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b title='{$row['produktname']}'>{$row['produktname']}</b></a></td>
                                         <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
                                         <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
@@ -326,8 +326,8 @@
                                 $sterne .= str_repeat("☆", $leere_sterne);
                             
                                 echo "<tr>
-                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='media/produktfotos/{$row['bild']}'></a></td>
-                                        <td><a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto'title='{$row['produktname']}' src='media/produktfotos/{$row['bild']}'></a></td>
+                                        <td><a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b title='{$row['produktname']}'>{$row['produktname']}</b></a></td>
                                         <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
                                         <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
@@ -385,8 +385,8 @@
                                 $sterne .= str_repeat("☆", $leere_sterne);
                             
                                 echo "<tr>
-                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='media/produktfotos/{$row['bild']}'></a></td>
-                                        <td><a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto'title='{$row['produktname']}' src='media/produktfotos/{$row['bild']}'></a></td>
+                                        <td><a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b title='{$row['produktname']}'>{$row['produktname']}</b></a></td>
                                         <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
                                         <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
@@ -444,8 +444,8 @@
                                 $sterne .= str_repeat("☆", $leere_sterne);
                             
                                 echo "<tr>
-                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto' src='media/produktfotos/{$row['bild']}'></a></td>
-                                        <td><a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a></td>
+                                        <td><a href='products/{$row['produkt_id']}.php'><img style='height: 100px; width: auto'title='{$row['produktname']}' src='media/produktfotos/{$row['bild']}'></a></td>
+                                        <td><a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b title='{$row['produktname']}'>{$row['produktname']}</b></a></td>
                                         <td><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
                                         <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
@@ -504,7 +504,7 @@
                             
                                 echo "<tr>
                                         <td>
-                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a>
+                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b title='{$row['produktname']}'>{$row['produktname']}</b></a>
                                             <span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span>
                                         </td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
@@ -562,7 +562,7 @@
                             
                                 echo "<tr>
                                         <td>
-                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a>
+                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b title='{$row['produktname']}'>{$row['produktname']}</b></a>
                                             <span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span>
                                         </td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
@@ -620,7 +620,7 @@
                             
                                 echo "<tr>
                                         <td>
-                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a>
+                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b title='{$row['produktname']}'>{$row['produktname']}</b></a>
                                             <span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span>
                                         </td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
@@ -678,7 +678,7 @@
                             
                                 echo "<tr>
                                         <td>
-                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a>
+                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b title='{$row['produktname']}'>{$row['produktname']}</b></a>
                                             <span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span>
                                         </td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
@@ -736,7 +736,7 @@
                             
                                 echo "<tr>
                                         <td>
-                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a>
+                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b title='{$row['produktname']}'>{$row['produktname']}</b></a>
                                             <span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span>
                                         </td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
@@ -794,7 +794,7 @@
                             
                                 echo "<tr>
                                         <td>
-                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a>
+                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b title='{$row['produktname']}'>{$row['produktname']}</b></a>
                                             <span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span>
                                         </td>
                                         <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
