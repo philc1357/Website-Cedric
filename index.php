@@ -458,8 +458,8 @@
 <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
             <!-- Tabelle für Mobile -->
-            <div>
-                <table id='display_kategorie_alle_mobile' class="display_mobile">
+            <div id='display_kategorie_alle_mobile' class="display_mobile">
+                <table>
                     <tr>
                         <th>Produkt</th>
                         <th>Preis</th>
@@ -482,20 +482,30 @@
                         // Daten ausgeben, falls vorhanden
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                // Sterne-Bewertung generieren
-                                $bewertung = (int) $row['bewertung']; // Sicherstellen, dass es eine ganze Zahl ist
-                                $sterne = str_repeat("★", $bewertung) . str_repeat("☆", 5 - $bewertung);
-                                
-                                // Produktname und Sterne in einer Zelle kombinieren (mit <br> für einen Zeilenumbruch)
+                                // Sterne-Bewertung als Double abrufen
+                                $bewertung = (double) $row['bewertung']; // Stelle sicher, dass es eine Gleitkommazahl ist
+                                $volle_sterne = floor($bewertung); // Ganze Sterne
+                                $hat_halben_stern = ($bewertung - $volle_sterne) >= 0.5; // Prüfen, ob es einen halben Stern gibt
+                                $leere_sterne = 5 - $volle_sterne - ($hat_halben_stern ? 1 : 0); // Restliche leere Sterne berechnen
+                            
+                                // HTML-Sterne generieren
+                                $sterne = str_repeat("★", $volle_sterne);
+                                if ($hat_halben_stern) {
+                                    $sterne .= "⯪"; // Unicode für halben Stern
+                                }
+                                $sterne .= str_repeat("☆", $leere_sterne);
+                            
                                 echo "<tr>
-                                        <td><b><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'>{$row['produktname']}<a/></b><br><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
-                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
                                         <td>
-                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a>
+                                            <span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span>
                                         </td>
+                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                        <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
                                     </tr>";
-                            }
-                        } else {
+                            }  
+                        } 
+                        else {
                             echo "<tr><td colspan='3'>Keine Produkte gefunden</td></tr>";
                         }
         
@@ -505,8 +515,8 @@
                 </table>
             </div>
 
-            <div>
-                <table id='display_kategorie_bluttdruck_mobile' class="display_mobile">
+            <div id='display_kategorie_blutdruck_mobile' class="display_mobile">
+                <table>
                     <tr>
                         <th>Produkt</th>
                         <th>Preis</th>
@@ -529,20 +539,30 @@
                         // Daten ausgeben, falls vorhanden
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                // Sterne-Bewertung generieren
-                                $bewertung = (int) $row['bewertung']; // Sicherstellen, dass es eine ganze Zahl ist
-                                $sterne = str_repeat("★", $bewertung) . str_repeat("☆", 5 - $bewertung);
-                                
-                                // Produktname und Sterne in einer Zelle kombinieren (mit <br> für einen Zeilenumbruch)
+                                // Sterne-Bewertung als Double abrufen
+                                $bewertung = (double) $row['bewertung']; // Stelle sicher, dass es eine Gleitkommazahl ist
+                                $volle_sterne = floor($bewertung); // Ganze Sterne
+                                $hat_halben_stern = ($bewertung - $volle_sterne) >= 0.5; // Prüfen, ob es einen halben Stern gibt
+                                $leere_sterne = 5 - $volle_sterne - ($hat_halben_stern ? 1 : 0); // Restliche leere Sterne berechnen
+                            
+                                // HTML-Sterne generieren
+                                $sterne = str_repeat("★", $volle_sterne);
+                                if ($hat_halben_stern) {
+                                    $sterne .= "⯪"; // Unicode für halben Stern
+                                }
+                                $sterne .= str_repeat("☆", $leere_sterne);
+                            
                                 echo "<tr>
-                                        <td><b><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'>{$row['produktname']}<a/></b><br><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
-                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
                                         <td>
-                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a>
+                                            <span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span>
                                         </td>
+                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                        <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
                                     </tr>";
-                            }
-                        } else {
+                            }  
+                        } 
+                        else {
                             echo "<tr><td colspan='3'>Keine Produkte gefunden</td></tr>";
                         }
         
@@ -552,8 +572,8 @@
                 </table>
             </div>
 
-            <div>
-                <table id='display_kategorie_stress_mobile' class="display_mobile">
+            <div id='display_kategorie_stress_mobile' class="display_mobile">
+                <table>
                     <tr>
                         <th>Produkt</th>
                         <th>Preis</th>
@@ -576,20 +596,30 @@
                         // Daten ausgeben, falls vorhanden
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                // Sterne-Bewertung generieren
-                                $bewertung = (int) $row['bewertung']; // Sicherstellen, dass es eine ganze Zahl ist
-                                $sterne = str_repeat("★", $bewertung) . str_repeat("☆", 5 - $bewertung);
-                                
-                                // Produktname und Sterne in einer Zelle kombinieren (mit <br> für einen Zeilenumbruch)
+                                // Sterne-Bewertung als Double abrufen
+                                $bewertung = (double) $row['bewertung']; // Stelle sicher, dass es eine Gleitkommazahl ist
+                                $volle_sterne = floor($bewertung); // Ganze Sterne
+                                $hat_halben_stern = ($bewertung - $volle_sterne) >= 0.5; // Prüfen, ob es einen halben Stern gibt
+                                $leere_sterne = 5 - $volle_sterne - ($hat_halben_stern ? 1 : 0); // Restliche leere Sterne berechnen
+                            
+                                // HTML-Sterne generieren
+                                $sterne = str_repeat("★", $volle_sterne);
+                                if ($hat_halben_stern) {
+                                    $sterne .= "⯪"; // Unicode für halben Stern
+                                }
+                                $sterne .= str_repeat("☆", $leere_sterne);
+                            
                                 echo "<tr>
-                                        <td><b><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'>{$row['produktname']}<a/></b><br><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
-                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
                                         <td>
-                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a>
+                                            <span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span>
                                         </td>
+                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                        <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
                                     </tr>";
-                            }
-                        } else {
+                            }  
+                        } 
+                        else {
                             echo "<tr><td colspan='3'>Keine Produkte gefunden</td></tr>";
                         }
         
@@ -599,8 +629,8 @@
                 </table>
             </div>
 
-            <div>
-                <table id='display_kategorie_ausdauer_mobile' class="display_mobile">
+            <div id='display_kategorie_ausdauer_mobile' class="display_mobile">
+                <table>
                     <tr>
                         <th>Produkt</th>
                         <th>Preis</th>
@@ -623,20 +653,30 @@
                         // Daten ausgeben, falls vorhanden
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                // Sterne-Bewertung generieren
-                                $bewertung = (int) $row['bewertung']; // Sicherstellen, dass es eine ganze Zahl ist
-                                $sterne = str_repeat("★", $bewertung) . str_repeat("☆", 5 - $bewertung);
-                                
-                                // Produktname und Sterne in einer Zelle kombinieren (mit <br> für einen Zeilenumbruch)
+                                // Sterne-Bewertung als Double abrufen
+                                $bewertung = (double) $row['bewertung']; // Stelle sicher, dass es eine Gleitkommazahl ist
+                                $volle_sterne = floor($bewertung); // Ganze Sterne
+                                $hat_halben_stern = ($bewertung - $volle_sterne) >= 0.5; // Prüfen, ob es einen halben Stern gibt
+                                $leere_sterne = 5 - $volle_sterne - ($hat_halben_stern ? 1 : 0); // Restliche leere Sterne berechnen
+                            
+                                // HTML-Sterne generieren
+                                $sterne = str_repeat("★", $volle_sterne);
+                                if ($hat_halben_stern) {
+                                    $sterne .= "⯪"; // Unicode für halben Stern
+                                }
+                                $sterne .= str_repeat("☆", $leere_sterne);
+                            
                                 echo "<tr>
-                                        <td><b><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'>{$row['produktname']}<a/></b><br><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
-                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
                                         <td>
-                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a>
+                                            <span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span>
                                         </td>
+                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                        <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
                                     </tr>";
-                            }
-                        } else {
+                            }  
+                        } 
+                        else {
                             echo "<tr><td colspan='3'>Keine Produkte gefunden</td></tr>";
                         }
         
@@ -646,8 +686,8 @@
                 </table>
             </div>
 
-            <div>
-                <table id='display_kategorie_herz_mobile' class="display_mobile">
+            <div id='display_kategorie_herz_mobile' class="display_mobile">
+                <table>
                     <tr>
                         <th>Produkt</th>
                         <th>Preis</th>
@@ -670,20 +710,30 @@
                         // Daten ausgeben, falls vorhanden
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                // Sterne-Bewertung generieren
-                                $bewertung = (int) $row['bewertung']; // Sicherstellen, dass es eine ganze Zahl ist
-                                $sterne = str_repeat("★", $bewertung) . str_repeat("☆", 5 - $bewertung);
-                                
-                                // Produktname und Sterne in einer Zelle kombinieren (mit <br> für einen Zeilenumbruch)
+                                // Sterne-Bewertung als Double abrufen
+                                $bewertung = (double) $row['bewertung']; // Stelle sicher, dass es eine Gleitkommazahl ist
+                                $volle_sterne = floor($bewertung); // Ganze Sterne
+                                $hat_halben_stern = ($bewertung - $volle_sterne) >= 0.5; // Prüfen, ob es einen halben Stern gibt
+                                $leere_sterne = 5 - $volle_sterne - ($hat_halben_stern ? 1 : 0); // Restliche leere Sterne berechnen
+                            
+                                // HTML-Sterne generieren
+                                $sterne = str_repeat("★", $volle_sterne);
+                                if ($hat_halben_stern) {
+                                    $sterne .= "⯪"; // Unicode für halben Stern
+                                }
+                                $sterne .= str_repeat("☆", $leere_sterne);
+                            
                                 echo "<tr>
-                                        <td><b><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'>{$row['produktname']}<a/></b><br><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
-                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
                                         <td>
-                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a>
+                                            <span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span>
                                         </td>
+                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                        <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
                                     </tr>";
-                            }
-                        } else {
+                            }  
+                        } 
+                        else {
                             echo "<tr><td colspan='3'>Keine Produkte gefunden</td></tr>";
                         }
         
@@ -693,8 +743,8 @@
                 </table>
             </div>
 
-            <div>
-                <table id='display_kategorie_immunsystem_mobile' class="display_mobile">
+            <div id='display_kategorie_immunsystem_mobile' class="display_mobile">
+                <table>
                     <tr>
                         <th>Produkt</th>
                         <th>Preis</th>
@@ -717,20 +767,30 @@
                         // Daten ausgeben, falls vorhanden
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                // Sterne-Bewertung generieren
-                                $bewertung = (int) $row['bewertung']; // Sicherstellen, dass es eine ganze Zahl ist
-                                $sterne = str_repeat("★", $bewertung) . str_repeat("☆", 5 - $bewertung);
-                                
-                                // Produktname und Sterne in einer Zelle kombinieren (mit <br> für einen Zeilenumbruch)
+                                // Sterne-Bewertung als Double abrufen
+                                $bewertung = (double) $row['bewertung']; // Stelle sicher, dass es eine Gleitkommazahl ist
+                                $volle_sterne = floor($bewertung); // Ganze Sterne
+                                $hat_halben_stern = ($bewertung - $volle_sterne) >= 0.5; // Prüfen, ob es einen halben Stern gibt
+                                $leere_sterne = 5 - $volle_sterne - ($hat_halben_stern ? 1 : 0); // Restliche leere Sterne berechnen
+                            
+                                // HTML-Sterne generieren
+                                $sterne = str_repeat("★", $volle_sterne);
+                                if ($hat_halben_stern) {
+                                    $sterne .= "⯪"; // Unicode für halben Stern
+                                }
+                                $sterne .= str_repeat("☆", $leere_sterne);
+                            
                                 echo "<tr>
-                                        <td><b><a style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'>{$row['produktname']}<a/></b><br><span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span></td>
-                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
                                         <td>
-                                            <a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a>
+                                            <a class='table_link_desktop' style='color: black; text-decoration: none' href='products/{$row['produkt_id']}.php'><b>{$row['produktname']}</b></a>
+                                            <span style='font-size: 25px; color: rgb(255,200,0)'>{$sterne}</span>
                                         </td>
+                                        <td>" . number_format($row['preis'], 2, ',', '.') . " €</td>
+                                        <td><a href='{$row['link']}' target='_blank' class='btn_kaufen_mobile'>Jetzt kaufen</a></td>                                
                                     </tr>";
-                            }
-                        } else {
+                            }  
+                        } 
+                        else {
                             echo "<tr><td colspan='3'>Keine Produkte gefunden</td></tr>";
                         }
         
