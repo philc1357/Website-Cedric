@@ -105,10 +105,9 @@
             <!-- Bereich für Suchergebnisse -->
             <div id="searchResults" class="category-section" style="display: none;"></div>
  
-            <h2 id="txt_alle_produkte">Alle Gesundheitsprodukte</h2>
- 
             <!-- Tabelle für Desktop -->
             <div id='display_kategorie_alle_desktop' class="display_desktop">
+                <h2 class="txt_alle_produkte">Alle Gesundheitsprodukte</h2>
                 <table>
                     <tr>
                         <th></th>
@@ -167,6 +166,8 @@
             </div>
 
             <div id='display_kategorie_blutdruck_desktop' class="display_desktop">
+                <h2 class="txt_alle_produkte">Blutdruck</h2>
+
                 <table>
                     <tr>
                         <th></th>
@@ -225,6 +226,8 @@
             </div>
 
             <div id='display_kategorie_herz_desktop' class="display_desktop">
+                <h2 class="txt_alle_produkte">Herz</h2>
+
                 <table>
                     <tr>
                         <th></th>
@@ -283,6 +286,7 @@
             </div>
 
             <div id='display_kategorie_ausdauer_desktop' class="display_desktop">
+                <h2 class="txt_alle_produkte">Ausdauer</h2>
                 <table>
                     <tr>
                         <th></th>
@@ -341,6 +345,7 @@
             </div>
 
             <div id='display_kategorie_immunsystem_desktop' class="display_desktop">
+                <h2 class="txt_alle_produkte">Immunsystem</h2>
                 <table>
                     <tr>
                         <th></th>
@@ -399,6 +404,7 @@
             </div>
 
             <div id='display_kategorie_stress_desktop' class="display_desktop">
+                <h2 class="txt_alle_produkte">Stress</h2>
                 <table>
                     <tr>
                         <th></th>
@@ -459,6 +465,7 @@
 
             <!-- Tabelle für Mobile -->
             <div id='display_kategorie_alle_mobile' class="display_mobile">
+                <h2 class="txt_alle_produkte">Alle Gesundheitsprodukte</h2>
                 <table>
                     <tr>
                         <th>Produkt</th>
@@ -516,6 +523,7 @@
             </div>
 
             <div id='display_kategorie_blutdruck_mobile' class="display_mobile">
+                <h2 class="txt_alle_produkte">Blutdruck</h2>
                 <table>
                     <tr>
                         <th>Produkt</th>
@@ -573,6 +581,7 @@
             </div>
 
             <div id='display_kategorie_stress_mobile' class="display_mobile">
+                <h2 class="txt_alle_produkte">Stress</h2>
                 <table>
                     <tr>
                         <th>Produkt</th>
@@ -630,6 +639,7 @@
             </div>
 
             <div id='display_kategorie_ausdauer_mobile' class="display_mobile">
+                <h2 class="txt_alle_produkte">Ausdauer</h2>
                 <table>
                     <tr>
                         <th>Produkt</th>
@@ -687,6 +697,7 @@
             </div>
 
             <div id='display_kategorie_herz_mobile' class="display_mobile">
+                <h2 class="txt_alle_produkte">Herz</h2>
                 <table>
                     <tr>
                         <th>Produkt</th>
@@ -744,6 +755,7 @@
             </div>
 
             <div id='display_kategorie_immunsystem_mobile' class="display_mobile">
+                <h2 class="txt_alle_produkte">Immunsystem</h2>
                 <table>
                     <tr>
                         <th>Produkt</th>

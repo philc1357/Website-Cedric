@@ -196,7 +196,7 @@ h1, h2 {
     background: #f0f0f0;
 }
 
-#txt_top_produkte, #txt_blutdruck, #txt_herz, #txt_ausdauer, #txt_immunsystem, #txt_stress, #txt_alle_produkte {
+#txt_top_produkte, #txt_blutdruck, #txt_herz, #txt_ausdauer, #txt_immunsystem, #txt_stress, .txt_alle_produkte {
     font-size: 25px;
     background-image: url("../media/underline.png");
     background-repeat: no-repeat;
@@ -377,7 +377,7 @@ th, td {
 th {
     background: linear-gradient(0deg, rgba(76,175,80,1) 0%, rgba(110,216,114,1) 100%);
     color: white;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 tr:hover {
