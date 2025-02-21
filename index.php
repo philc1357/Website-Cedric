@@ -121,7 +121,7 @@
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
                         $password = "rezensionDB12095692$$";
-                        $database = "rezensionDB12095692$$";
+                        $database = "mysql";
                 
                         // Creating a connection
                         $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
@@ -181,7 +181,7 @@
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
                         $password = "rezensionDB12095692$$";
-                        $database = "rezensionDB12095692$$";
+                        $database = "mysql";
                 
                         // Creating a connection
                         $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
@@ -241,7 +241,7 @@
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
                         $password = "rezensionDB12095692$$";
-                        $database = "rezensionDB12095692$$";
+                        $database = "mysql";
                 
                         // Creating a connection
                         $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
@@ -300,7 +300,7 @@
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
                         $password = "rezensionDB12095692$$";
-                        $database = "rezensionDB12095692$$";
+                        $database = "mysql";
                 
                         // Creating a connection
                         $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
@@ -359,7 +359,7 @@
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
                         $password = "rezensionDB12095692$$";
-                        $database = "rezensionDB12095692$$";
+                        $database = "mysql";
                 
                         // Creating a connection
                         $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
@@ -418,7 +418,7 @@
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
                         $password = "rezensionDB12095692$$";
-                        $database = "rezensionDB12095692$$";
+                        $database = "mysql";
                 
                         // Creating a connection
                         $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
@@ -477,7 +477,7 @@
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
                         $password = "rezensionDB12095692$$";
-                        $database = "rezensionDB12095692$$";
+                        $database = "mysql";
         
                         // Verbindung erstellen
                         $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
@@ -535,7 +535,7 @@
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
                         $password = "rezensionDB12095692$$";
-                        $database = "rezensionDB12095692$$";
+                        $database = "mysql";
         
                         // Verbindung erstellen
                         $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
@@ -593,7 +593,7 @@
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
                         $password = "rezensionDB12095692$$";
-                        $database = "rezensionDB12095692$$";
+                        $database = "mysql";
         
                         // Verbindung erstellen
                         $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
@@ -651,7 +651,7 @@
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
                         $password = "rezensionDB12095692$$";
-                        $database = "rezensionDB12095692$$";
+                        $database = "mysql";
         
                         // Verbindung erstellen
                         $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
@@ -709,7 +709,7 @@
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
                         $password = "rezensionDB12095692$$";
-                        $database = "rezensionDB12095692$$";
+                        $database = "mysql";
         
                         // Verbindung erstellen
                         $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
@@ -767,7 +767,7 @@
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
                         $password = "rezensionDB12095692$$";
-                        $database = "rezensionDB12095692$$";
+                        $database = "mysql";
         
                         // Verbindung erstellen
                         $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
