@@ -118,13 +118,13 @@
                     </tr>
                 
                     <?php               
-                        $servername = "localhost";
-                        $username = "root";
+                        $servername = "db5017148435.hosting-data.io";
+                        $username = "dbu2060385";
                         $password = "1234";
-                        $database = "mysql";
+                        $database = "rezensionDB12095692$$";
                 
                         // Creating a connection
-                        $conn = new mysqli($servername, $username, $password, $database);
+                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
                 
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte";
@@ -178,13 +178,13 @@
                     </tr>
                 
                     <?php               
-                        $servername = "localhost";
-                        $username = "root";
+                        $servername = "db5017148435.hosting-data.io";
+                        $username = "dbu2060385";
                         $password = "1234";
-                        $database = "mysql";
+                        $database = "rezensionDB12095692$$";
                 
                         // Creating a connection
-                        $conn = new mysqli($servername, $username, $password, $database);
+                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
                 
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'blutdruck'";
@@ -238,13 +238,13 @@
                     </tr>
                 
                     <?php               
-                        $servername = "localhost";
-                        $username = "root";
+                        $servername = "db5017148435.hosting-data.io";
+                        $username = "dbu2060385";
                         $password = "1234";
-                        $database = "mysql";
+                        $database = "rezensionDB12095692$$";
                 
                         // Creating a connection
-                        $conn = new mysqli($servername, $username, $password, $database);
+                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
                 
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'herz'";
@@ -297,13 +297,13 @@
                     </tr>
                 
                     <?php               
-                        $servername = "localhost";
-                        $username = "root";
+                        $servername = "db5017148435.hosting-data.io";
+                        $username = "dbu2060385";
                         $password = "1234";
-                        $database = "mysql";
+                        $database = "rezensionDB12095692$$";
                 
                         // Creating a connection
-                        $conn = new mysqli($servername, $username, $password, $database);
+                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
                 
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'ausdauer'";
@@ -356,13 +356,13 @@
                     </tr>
                 
                     <?php               
-                        $servername = "localhost";
-                        $username = "root";
+                        $servername = "db5017148435.hosting-data.io";
+                        $username = "dbu2060385";
                         $password = "1234";
-                        $database = "mysql";
+                        $database = "rezensionDB12095692$$";
                 
                         // Creating a connection
-                        $conn = new mysqli($servername, $username, $password, $database);
+                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
                 
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'immunsystem'";
@@ -415,13 +415,13 @@
                     </tr>
                 
                     <?php               
-                        $servername = "localhost";
-                        $username = "root";
+                        $servername = "db5017148435.hosting-data.io";
+                        $username = "dbu2060385";
                         $password = "1234";
-                        $database = "mysql";
+                        $database = "rezensionDB12095692$$";
                 
                         // Creating a connection
-                        $conn = new mysqli($servername, $username, $password, $database);
+                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
                 
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'stress'";
@@ -474,13 +474,13 @@
                     </tr>
                 
                     <?php
-                        $servername = "localhost";
-                        $username = "root";
+                        $servername = "db5017148435.hosting-data.io";
+                        $username = "dbu2060385";
                         $password = "1234";
-                        $database = "mysql";
+                        $database = "rezensionDB12095692$$";
         
                         // Verbindung erstellen
-                        $conn = new mysqli($servername, $username, $password, $database);
+                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
         
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte";
@@ -532,13 +532,13 @@
                     </tr>
                 
                     <?php
-                        $servername = "localhost";
-                        $username = "root";
+                        $servername = "db5017148435.hosting-data.io";
+                        $username = "dbu2060385";
                         $password = "1234";
-                        $database = "mysql";
+                        $database = "rezensionDB12095692$$";
         
                         // Verbindung erstellen
-                        $conn = new mysqli($servername, $username, $password, $database);
+                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
         
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'blutdruck'";
@@ -590,13 +590,13 @@
                     </tr>
                 
                     <?php
-                        $servername = "localhost";
-                        $username = "root";
+                        $servername = "db5017148435.hosting-data.io";
+                        $username = "dbu2060385";
                         $password = "1234";
-                        $database = "mysql";
+                        $database = "rezensionDB12095692$$";
         
                         // Verbindung erstellen
-                        $conn = new mysqli($servername, $username, $password, $database);
+                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
         
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'stress'";
@@ -648,13 +648,13 @@
                     </tr>
                 
                     <?php
-                        $servername = "localhost";
-                        $username = "root";
+                        $servername = "db5017148435.hosting-data.io";
+                        $username = "dbu2060385";
                         $password = "1234";
-                        $database = "mysql";
+                        $database = "rezensionDB12095692$$";
         
                         // Verbindung erstellen
-                        $conn = new mysqli($servername, $username, $password, $database);
+                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
         
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'ausdauer'";
@@ -706,13 +706,13 @@
                     </tr>
                 
                     <?php
-                        $servername = "localhost";
-                        $username = "root";
+                        $servername = "db5017148435.hosting-data.io";
+                        $username = "dbu2060385";
                         $password = "1234";
-                        $database = "mysql";
+                        $database = "rezensionDB12095692$$";
         
                         // Verbindung erstellen
-                        $conn = new mysqli($servername, $username, $password, $database);
+                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
         
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'herz'";
@@ -764,13 +764,13 @@
                     </tr>
                 
                     <?php
-                        $servername = "localhost";
-                        $username = "root";
+                        $servername = "db5017148435.hosting-data.io";
+                        $username = "dbu2060385";
                         $password = "1234";
-                        $database = "mysql";
+                        $database = "rezensionDB12095692$$";
         
                         // Verbindung erstellen
-                        $conn = new mysqli($servername, $username, $password, $database);
+                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
         
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'immunsystem'";
