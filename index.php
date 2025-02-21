@@ -120,7 +120,7 @@
                     <?php               
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
-                        $password = "1234";
+                        $password = "rezensionDB12095692$$";
                         $database = "rezensionDB12095692$$";
                 
                         // Creating a connection
@@ -180,7 +180,7 @@
                     <?php               
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
-                        $password = "1234";
+                        $password = "rezensionDB12095692$$";
                         $database = "rezensionDB12095692$$";
                 
                         // Creating a connection
@@ -240,7 +240,7 @@
                     <?php               
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
-                        $password = "1234";
+                        $password = "rezensionDB12095692$$";
                         $database = "rezensionDB12095692$$";
                 
                         // Creating a connection
@@ -299,7 +299,7 @@
                     <?php               
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
-                        $password = "1234";
+                        $password = "rezensionDB12095692$$";
                         $database = "rezensionDB12095692$$";
                 
                         // Creating a connection
@@ -358,7 +358,7 @@
                     <?php               
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
-                        $password = "1234";
+                        $password = "rezensionDB12095692$$";
                         $database = "rezensionDB12095692$$";
                 
                         // Creating a connection
@@ -417,7 +417,7 @@
                     <?php               
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
-                        $password = "1234";
+                        $password = "rezensionDB12095692$$";
                         $database = "rezensionDB12095692$$";
                 
                         // Creating a connection
@@ -476,7 +476,7 @@
                     <?php
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
-                        $password = "1234";
+                        $password = "rezensionDB12095692$$";
                         $database = "rezensionDB12095692$$";
         
                         // Verbindung erstellen
@@ -534,7 +534,7 @@
                     <?php
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
-                        $password = "1234";
+                        $password = "rezensionDB12095692$$";
                         $database = "rezensionDB12095692$$";
         
                         // Verbindung erstellen
@@ -592,7 +592,7 @@
                     <?php
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
-                        $password = "1234";
+                        $password = "rezensionDB12095692$$";
                         $database = "rezensionDB12095692$$";
         
                         // Verbindung erstellen
@@ -650,7 +650,7 @@
                     <?php
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
-                        $password = "1234";
+                        $password = "rezensionDB12095692$$";
                         $database = "rezensionDB12095692$$";
         
                         // Verbindung erstellen
@@ -708,7 +708,7 @@
                     <?php
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
-                        $password = "1234";
+                        $password = "rezensionDB12095692$$";
                         $database = "rezensionDB12095692$$";
         
                         // Verbindung erstellen
@@ -766,7 +766,7 @@
                     <?php
                         $servername = "db5017148435.hosting-data.io";
                         $username = "dbu2060385";
-                        $password = "1234";
+                        $password = "rezensionDB12095692$$";
                         $database = "rezensionDB12095692$$";
         
                         // Verbindung erstellen
