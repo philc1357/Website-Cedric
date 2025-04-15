@@ -118,13 +118,13 @@
                     </tr>
                 
                     <?php               
-                        $servername = "db5017148435.hosting-data.io";
-                        $username = "dbu2060385";
-                        $password = "rezensionDB12095692$$";
-                        $database = "dbs13782398";
+                        $servername = "**************";
+                        $username = "**********";
+                        $password = "*************************";
+                        $database = "**********";
                 
                         // Creating a connection
-                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
+                        $conn = new ******************i($servername, $username, $password, $database);
                 
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte";
@@ -178,13 +178,13 @@
                     </tr>
                 
                     <?php               
-                        $servername = "db5017148435.hosting-data.io";
-                        $username = "dbu2060385";
-                        $password = "rezensionDB12095692$$";
-                        $database = "dbs13782398";
+                        $servername = "*****************************";
+                        $username = "******************";
+                        $password = "******************";
+                        $database = "******************";
                 
                         // Creating a connection
-                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
+                        $conn = new ******************i($servername, $username, $password, $database);
                 
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'blutdruck'";
@@ -238,13 +238,13 @@
                     </tr>
                 
                     <?php               
-                        $servername = "db5017148435.hosting-data.io";
-                        $username = "dbu2060385";
-                        $password = "rezensionDB12095692$$";
-                        $database = "dbs13782398";
+                        $servername = "*****************************";
+                        $username = "******************";
+                        $password = "******************";
+                        $database = "******************";
                 
                         // Creating a connection
-                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
+                        $conn = new ******************i($servername, $username, $password, $database);
                 
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'herz'";
@@ -297,13 +297,13 @@
                     </tr>
                 
                     <?php               
-                        $servername = "db5017148435.hosting-data.io";
-                        $username = "dbu2060385";
-                        $password = "rezensionDB12095692$$";
-                        $database = "dbs13782398";
+                        $servername = "*****************************";
+                        $username = "******************";
+                        $password = "******************";
+                        $database = "******************";
                 
                         // Creating a connection
-                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
+                        $conn = new ******************i($servername, $username, $password, $database);
                 
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'ausdauer'";
@@ -356,13 +356,13 @@
                     </tr>
                 
                     <?php               
-                        $servername = "db5017148435.hosting-data.io";
-                        $username = "dbu2060385";
-                        $password = "rezensionDB12095692$$";
-                        $database = "dbs13782398";
+                        $servername = "*****************************";
+                        $username = "******************";
+                        $password = "******************";
+                        $database = "******************";
                 
                         // Creating a connection
-                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
+                        $conn = new ******************i($servername, $username, $password, $database);
                 
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'immunsystem'";
@@ -415,13 +415,13 @@
                     </tr>
                 
                     <?php               
-                        $servername = "db5017148435.hosting-data.io";
-                        $username = "dbu2060385";
-                        $password = "rezensionDB12095692$$";
-                        $database = "dbs13782398";
+                        $servername = "*****************************";
+                        $username = "******************";
+                        $password = "******************";
+                        $database = "******************";
                 
                         // Creating a connection
-                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
+                        $conn = new ******************i($servername, $username, $password, $database);
                 
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'stress'";
@@ -474,13 +474,13 @@
                     </tr>
                 
                     <?php
-                        $servername = "db5017148435.hosting-data.io";
-                        $username = "dbu2060385";
-                        $password = "rezensionDB12095692$$";
-                        $database = "dbs13782398";
+                        $servername = "*****************************";
+                        $username = "******************";
+                        $password = "******************";
+                        $database = "******************";
         
                         // Verbindung erstellen
-                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
+                        $conn = new ******************i($servername, $username, $password, $database);
         
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte";
@@ -532,13 +532,13 @@
                     </tr>
                 
                     <?php
-                        $servername = "db5017148435.hosting-data.io";
-                        $username = "dbu2060385";
-                        $password = "rezensionDB12095692$$";
-                        $database = "dbs13782398";
+                        $servername = "*****************************";
+                        $username = "******************";
+                        $password = "******************";
+                        $database = "******************";
         
                         // Verbindung erstellen
-                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
+                        $conn = new ******************i($servername, $username, $password, $database);
         
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'blutdruck'";
@@ -590,13 +590,13 @@
                     </tr>
                 
                     <?php
-                        $servername = "db5017148435.hosting-data.io";
-                        $username = "dbu2060385";
-                        $password = "rezensionDB12095692$$";
-                        $database = "dbs13782398";
+                        $servername = "*****************************";
+                        $username = "******************";
+                        $password = "******************";
+                        $database = "******************";
         
                         // Verbindung erstellen
-                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
+                        $conn = new ******************i($servername, $username, $password, $database);
         
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'stress'";
@@ -648,13 +648,13 @@
                     </tr>
                 
                     <?php
-                        $servername = "db5017148435.hosting-data.io";
-                        $username = "dbu2060385";
-                        $password = "rezensionDB12095692$$";
-                        $database = "dbs13782398";
+                        $servername = "*****************************";
+                        $username = "******************";
+                        $password = "******************";
+                        $database = "******************";
         
                         // Verbindung erstellen
-                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
+                        $conn = new ******************i($servername, $username, $password, $database);
         
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'ausdauer'";
@@ -706,13 +706,13 @@
                     </tr>
                 
                     <?php
-                        $servername = "db5017148435.hosting-data.io";
-                        $username = "dbu2060385";
-                        $password = "rezensionDB12095692$$";
-                        $database = "dbs13782398";
+                        $servername = "*****************************";
+                        $username = "******************";
+                        $password = "******************";
+                        $database = "******************";
         
                         // Verbindung erstellen
-                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
+                        $conn = new ******************i($servername, $username, $password, $database);
         
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'herz'";
@@ -764,13 +764,13 @@
                     </tr>
                 
                     <?php
-                        $servername = "db5017148435.hosting-data.io";
-                        $username = "dbu2060385";
-                        $password = "rezensionDB12095692$$";
-                        $database = "dbs13782398";
+                        $servername = "*****************************";
+                        $username = "******************";
+                        $password = "******************";
+                        $database = "******************";
         
                         // Verbindung erstellen
-                        $conn = new rezensionDB12095692$$i($servername, $username, $password, $database);
+                        $conn = new ******************i($servername, $username, $password, $database);
         
                         // SQL-Abfrage vorbereiten
                         $sql = "SELECT * FROM produkte WHERE kategorie = 'immunsystem'";
