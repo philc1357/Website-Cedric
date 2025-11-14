@@ -1,8 +1,12 @@
-access-5017145758.webspace-host.com
-a1990980
-kyvkoz-cyxme9-Vevjef
+Website zum Gesundheitsprodukte-Vergleich.
 
-db5017148435.hosting-data.io
-dbs13782398
-dbu2060385
-rezensionDB12095692$$
+Ziel:
+Eine tabellarische Übersicht zu verschiedenen Gesundheitsprodukten, aufgeteilt nach Kategorien.
+Amazon Affiliate Links führen zu den Produkten.
+
+Erledigt:
+SQL Datenbank angelegt und strukturiert.
+Startseite der Website mit finalen Design.
+Tabellarischer Katalog der Produkte.
+Erstes Produkt als Affiliate-Link angeboten.
+Produktübersicht des einzelnen Produktes.
